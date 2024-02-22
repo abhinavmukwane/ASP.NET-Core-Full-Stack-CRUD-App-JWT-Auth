@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET_Fullstack_API", "ASP.NET_Fullstack_App\ASP.NET_Fullstack_API.csproj", "{CCA05BAD-27A9-4A61-B86F-1D123F59F35D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET_Fullstack_MVC", "ASP.NET_Fullstack_MVC\ASP.NET_Fullstack_MVC.csproj", "{9D87F04B-3B52-477A-AD86-5EEE239ABCE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCA05BAD-27A9-4A61-B86F-1D123F59F35D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA05BAD-27A9-4A61-B86F-1D123F59F35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA05BAD-27A9-4A61-B86F-1D123F59F35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA05BAD-27A9-4A61-B86F-1D123F59F35D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D87F04B-3B52-477A-AD86-5EEE239ABCE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D87F04B-3B52-477A-AD86-5EEE239ABCE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D87F04B-3B52-477A-AD86-5EEE239ABCE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D87F04B-3B52-477A-AD86-5EEE239ABCE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6B0CB45-37C0-4AB9-986B-AFC7BAB6151C}
+	EndGlobalSection
+EndGlobal
