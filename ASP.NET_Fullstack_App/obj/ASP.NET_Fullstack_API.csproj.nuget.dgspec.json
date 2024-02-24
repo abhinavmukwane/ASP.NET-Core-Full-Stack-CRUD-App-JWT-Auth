@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abhin\\New folder\\ASP.NET-Core-Full-Stack-CRUD-App-JWT-Auth\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj": {}
+    "C:\\Users\\abhin\\New folder\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abhin\\New folder\\ASP.NET-Core-Full-Stack-CRUD-App-JWT-Auth\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj": {
+    "C:\\Users\\abhin\\New folder\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abhin\\New folder\\ASP.NET-Core-Full-Stack-CRUD-App-JWT-Auth\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj",
+        "projectUniqueName": "C:\\Users\\abhin\\New folder\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj",
         "projectName": "ASP.NET_Fullstack_API",
-        "projectPath": "C:\\Users\\abhin\\New folder\\ASP.NET-Core-Full-Stack-CRUD-App-JWT-Auth\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj",
+        "projectPath": "C:\\Users\\abhin\\New folder\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_API.csproj",
         "packagesPath": "C:\\Users\\abhin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abhin\\New folder\\ASP.NET-Core-Full-Stack-CRUD-App-JWT-Auth\\ASP.NET_Fullstack_App\\obj\\",
+        "outputPath": "C:\\Users\\abhin\\New folder\\ASP.NET_Fullstack_App\\ASP.NET_Fullstack_App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

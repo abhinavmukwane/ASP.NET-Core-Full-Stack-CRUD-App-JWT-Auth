@@ -7,6 +7,7 @@ C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\ASP.NET_Fullstack_API.pdb
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
@@ -69,4 +70,3 @@ C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\obj\Debug\net7.0
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\obj\Debug\net7.0\ASP.NET_Fullstack_API.pdb
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\obj\Debug\net7.0\ASP.NET_Fullstack_API.genruntimeconfig.cache
 C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\obj\Debug\net7.0\ref\ASP.NET_Fullstack_API.dll
-C:\Users\abhin\.Net\ASP.NET_Fullstack_App\ASP.NET_Fullstack_App\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -17,45 +17,45 @@ namespace ASP.NET_Fullstack_MVC.Controllers
             _httpClient.BaseAddress = new Uri("https://localhost:7001/api/");
         }
 
-        private async Task<string> GetJwtTokenAsync()
-        {
-            var loginUrl = "Auth/login";
-            var loginData = new
-            {
-                username = "admin",
-                password = "admin"
-            };
+        //private async Task<string> GetJwtTokenAsync()
+        //{
+        //    var loginUrl = "Auth/login";
+        //    var loginData = new
+        //    {
+        //        username = "admin",
+        //        password = "admin"
+        //    };
 
-            var content = new StringContent(JsonConvert.SerializeObject(loginData), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync(loginUrl, content);
+        //    var content = new StringContent(JsonConvert.SerializeObject(loginData), Encoding.UTF8, "application/json");
+        //    var response = await _httpClient.PostAsync(loginUrl, content);
 
-            if (response.IsSuccessStatusCode)
-            {
-                var tokenResponse = await response.Content.ReadAsStringAsync();
-                return tokenResponse.Trim(); // Trim whitespace characters if necessary
-            }
-            else
-            {
-                throw new HttpRequestException($"Failed to authenticate. Status code: {response.StatusCode}");
-            }
-        }
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var tokenResponse = await response.Content.ReadAsStringAsync();
+        //        return tokenResponse.Trim(); // Trim whitespace characters if necessary
+        //    }
+        //    else
+        //    {
+        //        throw new HttpRequestException($"Failed to authenticate. Status code: {response.StatusCode}");
+        //    }
+        //}
 
-        private async Task<string> GetOrRefreshTokenAsync()
+        private string GetOrRefreshToken()
         {
             var token = HttpContext.Session.GetString("JwtToken");
 
-            if (string.IsNullOrEmpty(token))
-            {
-                token = await GetJwtTokenAsync();
-                HttpContext.Session.SetString("JwtToken", token);
-            }
+            //if (string.IsNullOrEmpty(token))
+            //{
+            //    token = await GetJwtTokenAsync();
+            //    HttpContext.Session.SetString("JwtToken", token);
+            //}
 
             return token;
         }
 
         private async Task<HttpClient> GetAuthorizedClientAsync()
         {
-            var token = await GetOrRefreshTokenAsync();
+            var token = GetOrRefreshToken();
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             return _httpClient;
         }
@@ -65,6 +65,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         {
             try
             {
+                var token = HttpContext.Session.GetString("JwtToken");
+                if (string.IsNullOrEmpty(token))
+                {
+                    // If JwtToken is not found in session, redirect to login page
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 using (var httpClient = await GetAuthorizedClientAsync())
                 {
                     var response = await httpClient.GetAsync("Product");
@@ -92,6 +99,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var token = GetOrRefreshToken();
+            if (string.IsNullOrEmpty(token))
+            {
+                // If JwtToken is not found in session, redirect to login page
+                return RedirectToAction("Login", "Auth");
+            }
+
             return View();
         }
 
@@ -100,7 +114,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         {
             try
             {
-                var token = await GetOrRefreshTokenAsync();
+                var token = GetOrRefreshToken();
+                if (string.IsNullOrEmpty(token))
+                {
+                    // If JwtToken is not found in session, redirect to login page
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 string data = JsonConvert.SerializeObject(model);
@@ -131,7 +151,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         {
             try
             {
-                var token = await GetOrRefreshTokenAsync();
+                var token = GetOrRefreshToken();
+                if (string.IsNullOrEmpty(token))
+                {
+                    // If JwtToken is not found in session, redirect to login page
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await _httpClient.GetAsync($"Product/{id}");
@@ -160,7 +186,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         {
             try
             {
-                var token = await GetOrRefreshTokenAsync();
+                var token = GetOrRefreshToken();
+                if (string.IsNullOrEmpty(token))
+                {
+                    // If JwtToken is not found in session, redirect to login page
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 string data = JsonConvert.SerializeObject(model);
@@ -191,7 +223,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         {
             try
             {
-                var token = await GetOrRefreshTokenAsync();
+                var token = GetOrRefreshToken();
+                if (string.IsNullOrEmpty(token))
+                {
+                    // If JwtToken is not found in session, redirect to login page
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await _httpClient.GetAsync($"Product/{id}");
@@ -220,7 +258,13 @@ namespace ASP.NET_Fullstack_MVC.Controllers
         {
             try
             {
-                var token = await GetOrRefreshTokenAsync();
+                var token = GetOrRefreshToken();
+                if (string.IsNullOrEmpty(token))
+                {
+                    // If JwtToken is not found in session, redirect to login page
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await _httpClient.DeleteAsync($"Product/{id}");
