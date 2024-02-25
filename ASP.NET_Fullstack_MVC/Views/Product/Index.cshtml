@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ASP.NET_Fullstack_MVC.Models.ProductViewModel>
+@model IEnumerable<ASP.NET_Fullstack_MVC.Models.ProductViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +10,7 @@
     <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 <div class="table-responsive">
-    <table class="table table-hover">
+    <table id="productTable" class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Product ID</th>
@@ -46,3 +46,11 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#productTable').DataTable({
+            "lengthMenu": [5, 10, 20] // Sets the options for entries per page
+        });
+    });
+</script>
