@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http
 @{
     var session = ViewContext.HttpContext.Session;
 }
@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ASP.NET_Fullstack_MVC.styles.css" asp-append-version="true" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Include DataTables CSS -->
+   @*  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.0/css/datatables.datatables.min.css"> *@
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.min.css">
+
 </head>
 <body>
     <header>
@@ -27,9 +33,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         @if (session.GetString("JwtToken") != null)
@@ -38,7 +41,7 @@
                                 <button type="submit" class="btn btn-warning">Logout</button>
                             </form>
                         }
-                    </ul>
+                    </ul>&nbsp; &nbsp; &nbsp;
                 </div>
             </div>
         </nav>
@@ -66,13 +69,17 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - ASP.NET_Fullstack_MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - ASP.NET Core Fullstack with JWT Auth Login Logout
         </div>
     </footer>
     <script src="~/js/custom.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Include DataTables -->
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
